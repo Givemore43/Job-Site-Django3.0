@@ -1,0 +1,35 @@
+{% extends 'jobsite/base.html' %}
+{% block title %}Jobs - Views Jobs{% endblock %}
+{% block content %}
+<div class="container">
+    <br><br><br>
+    <div class="row">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8">
+        <h3>Find Your Desired Job</h3>
+            <hr>
+            <br><br>
+            {% for job in jobs %}
+            <h4>{{ job.job_title }}</h4>
+            <p><i>Employer:</i> {{ job.job_employer }}</p>
+            <p><i>Position:</i> {{ job.job_position }}</p>
+            <p><i>Category:</i> {{ job.job_category }}</p>
+            <hr>
+            <p><i>Job Description:</i> {{ job.job_description }}</p>
+            <hr>
+            <h5><i>Contact Info</i></h5>
+            <p><i>Phone:</i> {{ job.job_phone }}</p>
+            <p><i>Email Us:</i> <a href="">{{ job.job_email }}</a></p>
+            <p><i>Apply On Our Website:</i> <a href="">{{ job.job_website }}</a></p>
+            <br><br>
+            {% endfor %}
+        </div>
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <br><br><br>
+</div>
+{% endblock %}
